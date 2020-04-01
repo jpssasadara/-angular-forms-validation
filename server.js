@@ -3,7 +3,7 @@ const path = require('path');
 
 const ngApp = express();
 
-ngApp.use(express.static(__dirname +'/dist/-angular-forms-validation'));
+ngApp.use(express.static('./dist/-angular-forms-validation'));
 
 ngApp.get('/*', function (request, response) {
     response.sendFile(path.join(__dirname, '/dist/-angular-forms-validation/index.html'));
