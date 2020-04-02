@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PieChartComponentComponent } from './pie-chart-component/pie-chart-component.component';
 import { ChartsModule } from 'ng2-charts';
 import {  PieChartComponent2Component } from './pie-chart-component2/pie-chart-component2.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import {  PieChartComponent2Component } from './pie-chart-component2/pie-chart-c
     LocalsituationComponent,
     PieChartComponentComponent,
     PieChartComponent2Component,
+    BarChartComponent,
+    LineChartComponent,
     
   ],
   imports: [
