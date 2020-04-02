@@ -13,6 +13,8 @@ import { MatchPasswordDirective } from './directives/match-password.directive';
 import { ValidateUserNameDirective } from './directives/validate-user-name.directive';
 import { LocalsituationComponent } from './localsituation/localsituation.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PieChartComponentComponent } from './pie-chart-component/pie-chart-component.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -26,12 +28,14 @@ import { HttpClientModule } from '@angular/common/http';
     MatchPasswordDirective,
     ValidateUserNameDirective,
     LocalsituationComponent,
+    PieChartComponentComponent,
     
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
+    ChartsModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
