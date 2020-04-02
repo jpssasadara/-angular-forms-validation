@@ -6,14 +6,14 @@ import { LocalsituationService } from '../services/localsituation.service';
 import { Information } from '../models/information';
 
 @Component({
-  selector: 'app-pie-chart-component',
-  templateUrl: './pie-chart-component.component.html',
-  styleUrls: ['./pie-chart-component.component.scss']
+  selector: 'app-pie-chart-component2',
+  templateUrl: './pie-chart-component2.component.html',
+  styleUrls: ['./pie-chart-component2.component.scss']
 })
-export class PieChartComponentComponent implements OnInit {
+export class PieChartComponent2Component implements OnInit {
 
-  // Pie
-  public pieChartOptions: ChartOptions = {
+   // Pie
+   public pieChartOptions: ChartOptions = {
     responsive: true,
     legend: {
       position: 'top',
@@ -27,7 +27,7 @@ export class PieChartComponentComponent implements OnInit {
       },
     }
   };
-  public pieChartLabels: Label[] = [[' Current Patients'], ['Local Deaths'], ['Local Recovered']];
+  public pieChartLabels: Label[] = [[' Current Patients'], ['Global  Deaths'], ['Global Recovered']];
   public pieChartData: number[]=[0,0,0];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
@@ -73,7 +73,7 @@ export class PieChartComponentComponent implements OnInit {
             this.global_deaths = data.data.global_deaths;
             this.global_recovered = data.data.global_recovered;
             //######################################################
-            this.pieChartData = [this.local_total_cases-this.local_deaths-this.local_recovered,this.local_deaths,this.local_recovered];
+            this.pieChartData = [this.global_total_cases-this.global_deaths-this.global_recovered,this.global_deaths,this.global_recovered];
             //####################################################
 
             console.log(data);
@@ -122,3 +122,4 @@ export class PieChartComponentComponent implements OnInit {
     this.pieChartOptions.legend.position = this.pieChartOptions.legend.position === 'left' ? 'top' : 'left';
   }
 }
+

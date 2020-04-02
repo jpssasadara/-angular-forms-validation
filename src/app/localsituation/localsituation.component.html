@@ -1,6 +1,7 @@
 
 <div class="social-box">
     <div class="container">
+        <div class="well  bg-dark text-center text-white"><h1>Current Situation of Sri Lanka</h1></div>
      	<div class="row">
 			 
 			    <div class="col-lg-4 col-xs-12 text-center">
@@ -114,3 +115,82 @@
 "local_new_deaths": 0,
 "local_recovered": 21,
 "local_active_cases": 124,-->
+
+<div class="social-box">
+    <div class="container">
+        <div class="well  bg-dark text-center text-white"><h1>Current Situation Global </h1></div>
+     	<div class="row">
+           
+			    <div class="col-lg-4 col-xs-12 text-center">
+					<div class="box">
+                        <i class="fa fa-behance fa-3x" aria-hidden="true"></i>
+						<div class="box-title">
+							<h1>{{global_new_cases}}</h1>
+						</div>
+						<div class="box-text">
+							<span><h5>New Global Cases</h5></span>
+						</div>
+						<div class="box-btn">
+						    <a href="#">Updated date time : {{update_date_time}}</a>
+						</div>
+					 </div>
+				</div>	 
+				
+				 <div class="col-lg-4 col-xs-12  text-center">
+					<div class="box">
+                        <i class="fa fa-behance fa-3x" aria-hidden="true"></i>
+						<div class="box-title">
+							<h1>{{global_total_cases}}</h1>
+						</div>
+						<div class="box-text">
+							<span><h5>Total Number of Global Cases</h5></span>
+						</div>
+						<div class="box-btn">
+						    <a href="#">Updated date time : {{update_date_time}}</a>
+						</div>
+					 </div>
+				</div>	 
+				
+				 <div class="col-lg-4 col-xs-12 text-center">
+					<div class="box">
+                        <i class="fa fa-behance fa-3x" aria-hidden="true"></i>
+						<div class="box-title">
+							<h1>{{global_deaths}}</h1>
+						</div>
+						<div class="box-text">
+							<span><h5> Number of Global Deaths</h5></span>
+						</div>
+						<div class="box-btn">
+						    <a href="#">Updated date time : {{update_date_time}}</a>
+						</div>
+					 </div>
+				</div>	 
+				
+				<div class="col-lg-4 col-xs-12 text-center">
+					<div class="box">
+                        <i class="fa fa-behance fa-3x" aria-hidden="true"></i>
+						<div class="box-title">
+							<h1>{{global_recovered}}</h1>
+						</div>
+						<div class="box-text">
+							<span><h5>Global Recovered</h5></span>
+						</div>
+						<div class="box-btn">
+						    <a href="#">Updated date time : {{update_date_time}}</a>
+						</div>
+					 </div>
+				</div>	 
+				
+				 
+		
+		</div>		
+    </div>
+</div>
+<div>
+    <div class="col-lg-8 col-xs-12 text-center ">
+        <div class="box">
+            <div class=" box bg-light" ><app-pie-chart-component2></app-pie-chart-component2></div> 
+         </div>
+    </div>
+ 
+</div>

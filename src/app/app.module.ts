@@ -15,6 +15,7 @@ import { LocalsituationComponent } from './localsituation/localsituation.compone
 import { HttpClientModule } from '@angular/common/http';
 import { PieChartComponentComponent } from './pie-chart-component/pie-chart-component.component';
 import { ChartsModule } from 'ng2-charts';
+import {  PieChartComponent2Component } from './pie-chart-component2/pie-chart-component2.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ChartsModule } from 'ng2-charts';
     ValidateUserNameDirective,
     LocalsituationComponent,
     PieChartComponentComponent,
+    PieChartComponent2Component,
     
   ],
   imports: [
@@ -38,10 +40,10 @@ import { ChartsModule } from 'ng2-charts';
     ChartsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
+      { path: '', component: LocalsituationComponent  },
       { path: 'reactive-form', component: ReactiveFormComponent },
       { path: 'template-form', component: TemplateDrivenFormComponent },
-      { path: 'local-situation', component:LocalsituationComponent}
+      { path: 'local-situation', component:HomeComponent}
     ]),
   ],
   providers: [],

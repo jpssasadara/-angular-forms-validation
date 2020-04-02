@@ -21,6 +21,10 @@ export class LocalsituationComponent implements OnInit {
  local_new_deaths
  local_recovered
  local_active_cases
+ global_new_cases
+ global_total_cases
+ global_deaths
+ global_recovered
   ngOnInit() {
     this.loadInformation();
 
@@ -40,6 +44,10 @@ loadInformation() {
                 this.local_new_deaths = data.data.local_new_deaths;
                 this.local_recovered = data.data.local_recovered;
                 this.local_active_cases = data.data.local_active_cases;
+                this.global_new_cases = data.data.global_new_cases;
+                this.global_total_cases = data.data.global_total_cases;
+                this.global_deaths = data.data.global_deaths;
+                this.global_recovered = data.data.global_recovered;
                 //######################################################
 
                 console.log(data);
