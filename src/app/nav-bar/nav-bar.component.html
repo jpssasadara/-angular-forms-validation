@@ -9,7 +9,7 @@
         [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="https://hpb.health.gov.lk/api/get-current-statistical">Local Situation</a>
+                <a class="nav-link" [routerLink]='["/local-situation"]'>Local Situation</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" [routerLink]='["/reactive-form"]'>District Distribution of Confirmed Patients</a>

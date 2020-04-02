@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { PasswordPatternDirective } from './directives/password-pattern.directive';
 import { MatchPasswordDirective } from './directives/match-password.directive';
 import { ValidateUserNameDirective } from './directives/validate-user-name.directive';
+import { LocalsituationComponent } from './localsituation/localsituation.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -21,16 +24,20 @@ import { ValidateUserNameDirective } from './directives/validate-user-name.direc
     HomeComponent,
     PasswordPatternDirective,
     MatchPasswordDirective,
-    ValidateUserNameDirective
+    ValidateUserNameDirective,
+    LocalsituationComponent,
+    
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'reactive-form', component: ReactiveFormComponent },
       { path: 'template-form', component: TemplateDrivenFormComponent },
+      { path: 'local-situation', component:LocalsituationComponent}
     ]),
   ],
   providers: [],
