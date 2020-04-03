@@ -25,6 +25,7 @@ export class LocalsituationComponent implements OnInit {
  global_total_cases
  global_deaths
  global_recovered
+
   ngOnInit() {
     this.loadInformation();
 
@@ -34,7 +35,7 @@ loadInformation() {
     this.localsituationService.getInformation()
         .subscribe( data => {
                 this.information = data;
-                this.xx = data.data.global_deaths
+                this.xx = data.data.hospital_data
                 //################### fixing data  #####################
                 this.update_date_time = data.data.update_date_time;
                 this.local_new_cases = data.data.local_new_cases;

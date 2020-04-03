@@ -26,7 +26,12 @@ export class BarChartComponent implements OnInit {
   public barChartLegend = true;
   public barChartPlugins = [pluginDataLabels];
 
-  public barChartData: ChartDataSets[] = []
+  public barChartData: ChartDataSets[] = [
+    {data: [0], label: 'Total Number of Local Cases'},
+              {data: [0], label: 'Number of Individuals in Hospitals'},
+              {data: [0], label: 'Local Recovered'},
+              {data: [0], label: 'Local Deaths'}
+  ]
 
   constructor(private localsituationService:LocalsituationService) { }
   information:Information = null

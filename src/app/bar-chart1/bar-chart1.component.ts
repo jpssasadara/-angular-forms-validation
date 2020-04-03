@@ -2,34 +2,22 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
 import * as pluginAnnotations from 'chartjs-plugin-annotation';
+import { LocalsituationService } from '../services/localsituation.service';
+import { Information } from '../models/information';
 
 @Component({
-  selector: 'app-line-chart',
-  templateUrl: './line-chart.component.html'
+  selector: 'app-bar-chart1',
+  templateUrl: './bar-chart1.component.html',
+  styleUrls: ['./bar-chart1.component.scss']
 })
-export class LineChartComponent implements OnInit {
+export class BarChart1Component implements OnInit {
+
   public lineChartData: ChartDataSets[] = [
-    { data: [0,1,2,2,5,8
-      ,10
-      ,14 ,11
-      ,12
-      ,6 ,6
-      ,9
-      ,10
-      ,5
-      ,0
-      ,4
-      ,0
-      ,9
-      ,2
-      ,5
-      ,21
-      ,5], label: 'Sri Lanka' },
-    
+    { data: [], label: 'Cumulative Total' },
+    { data: [], label: 'Treatment Total ' },
    
   ];
-  public lineChartLabels: Label[] = ['11-Mar','12-Mar' , '13-Mar', '14-Mar', '15-Mar', '16-Mar', '17-Mar','18-Mar','19-Mar','20-Mar',
-  '21-Mar','22-Mar','23-Mar','24-Mar','25-Mar','26-Mar','27-Mar','28-Mar','29-Mar','30-Mar','31-Mar','Apr-1','Apr-2'];
+  public lineChartLabels: Label[] =[];
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
     responsive: true,
     scales: {
@@ -79,14 +67,6 @@ export class LineChartComponent implements OnInit {
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     },
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
-    },
     { // red
       backgroundColor: 'rgba(255,0,0,0.3)',
       borderColor: 'red',
@@ -94,7 +74,16 @@ export class LineChartComponent implements OnInit {
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    },
+    { // dark grey
+      backgroundColor: 'rgba(77,83,96,0.2)',
+      borderColor: 'rgba(77,83,96,1)',
+      pointBackgroundColor: 'rgba(77,83,96,1)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(77,83,96,1)'
     }
+    
   ];
   public lineChartLegend = true;
   public lineChartType = 'line';
@@ -102,11 +91,7 @@ export class LineChartComponent implements OnInit {
 
   chart: BaseChartDirective;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+ 
   public randomize(): void {
     for (let i = 0; i < this.lineChartData.length; i++) {
       for (let j = 0; j < this.lineChartData[i].data.length; j++) {
@@ -152,4 +137,63 @@ export class LineChartComponent implements OnInit {
     this.lineChartLabels[2] = ['1st Line', '2nd Line'];
     // this.chart.update();
   }
+
+  
+
+
+  constructor(private localsituationService:LocalsituationService) { }
+  information:Information = null
+  xx
+  cumulative_totalA=[]
+  treatment_totalA=[]
+  name = []
+  ngOnInit() {
+    this.loadInformation();
+
 }
+
+loadInformation() {
+    this.localsituationService.getInformation()
+        .subscribe( data => {
+                this.information = data;
+                this.xx = data.data.hospital_data
+                for(var item in this.xx){
+                  console.log(this.xx[item].cumulative_total)
+                  console.log(this.xx[item].treatment_total)
+                  console.log(this.xx[item].hospital.name)
+                  this.cumulative_totalA.push(this.xx[item].cumulative_total)
+                  this.treatment_totalA.push(this.xx[item].treatment_total)
+                  this.name.push(this.xx[item].hospital.name)
+              }
+             
+                //######################################################
+              this.lineChartData  = [
+                  { data: this.cumulative_totalA, label: 'Cumulative Total' },
+                  { data: this.treatment_totalA, label: 'Treatment Total ' },
+                 
+                ];
+                
+                this.lineChartLabels = this.name;
+                //#######################################################
+                console.log(data);
+                if (data == null) {
+                    console.log('No registered instance');
+                } else {
+                    console.log(data);
+                    console.log('Relevant instance are loaded ');
+                }
+            }
+        );
+        
+
+}
+
+}
+/*"update_date_time": "2020-04-02 11:15:57",
+"local_new_cases": 2,
+"local_total_cases": 148,
+"local_total_number_of_individuals_in_hospitals": 231,
+"local_deaths": 3,
+"local_new_deaths": 0,
+"local_recovered": 21,
+"local_active_cases": 124, */

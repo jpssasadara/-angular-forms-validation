@@ -18,6 +18,10 @@ import { ChartsModule } from 'ng2-charts';
 import {  PieChartComponent2Component } from './pie-chart-component2/pie-chart-component2.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
+import { PieChartComponent3Component } from './pie-chart-component3/pie-chart-component3.component';
+import { PieChartComponent4Component } from './pie-chart-component4/pie-chart-component4.component';
+import { BarChart1Component } from './bar-chart1/bar-chart1.component';
+import { LineChart1Component } from './line-chart1/line-chart1.component';
 
 
 @NgModule({
@@ -35,6 +39,10 @@ import { LineChartComponent } from './line-chart/line-chart.component';
     PieChartComponent2Component,
     BarChartComponent,
     LineChartComponent,
+    PieChartComponent3Component,
+    PieChartComponent4Component,
+    BarChart1Component,
+    LineChart1Component,
     
   ],
   imports: [

@@ -4,28 +4,45 @@ import { Color, BaseChartDirective, Label } from 'ng2-charts';
 import * as pluginAnnotations from 'chartjs-plugin-annotation';
 
 @Component({
-  selector: 'app-line-chart',
-  templateUrl: './line-chart.component.html'
+  selector: 'app-line-chart1',
+  templateUrl: './line-chart1.component.html',
+  styleUrls: ['./line-chart1.component.scss']
 })
-export class LineChartComponent implements OnInit {
+export class LineChart1Component implements OnInit {
+
   public lineChartData: ChartDataSets[] = [
-    { data: [0,1,2,2,5,8
-      ,10
-      ,14 ,11
-      ,12
-      ,6 ,6
-      ,9
-      ,10
-      ,5
-      ,0
-      ,4
-      ,0
-      ,9
-      ,2
-      ,5
-      ,21
-      ,5], label: 'Sri Lanka' },
-    
+   
+    { data: [806
+      ,1922
+      ,2223
+      ,2232
+      ,2873
+      ,3735
+      ,3656
+      ,3993
+      ,4125
+      ,4620
+      ,6741
+      ,7499
+      ,9764
+      ,10982
+      ,13903
+      ,11525
+      ,15123
+      ,16556
+      ,24247
+      ,32000
+      ,26069
+      ,40788
+      ,39825
+      ,40712
+      ,49219
+      ,46484
+      ,62514
+      ,63159
+      ,58411
+      ,57610
+      ,72736], label: 'Global ' }
    
   ];
   public lineChartLabels: Label[] = ['11-Mar','12-Mar' , '13-Mar', '14-Mar', '15-Mar', '16-Mar', '17-Mar','18-Mar','19-Mar','20-Mar',
@@ -153,3 +170,4 @@ export class LineChartComponent implements OnInit {
     // this.chart.update();
   }
 }
+

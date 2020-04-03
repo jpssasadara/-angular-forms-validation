@@ -5,12 +5,12 @@
      	<div class="row">
 			 
 			    <div class="col-lg-4 col-xs-12 text-center">
-					<div class="box">
+					<div class="box ">
                         <i class="fa fa-behance fa-3x" aria-hidden="true"></i>
-						<div class="box-title">
+						<div class="box-title ">
 							<h1>{{local_new_cases}}</h1>
 						</div>
-						<div class="box-text">
+						<div class="box-text ">
 							<span><h5>New Local Cases</h5></span>
 						</div>
 						<div class="box-btn">
@@ -208,9 +208,73 @@
             <div class="col-lg-5 col-xs-12 text-center ">
                 <div >
                     
-                    <div class=" box bg-light" ><app-line-chart></app-line-chart></div> 
+                    <div class=" box bg-light" ><app-line-chart1></app-line-chart1></div> 
                  </div>
             </div>
         </div>		
     </div>
+</div>
+
+<!--hospital-->
+
+<div class="social-box">
+    <div class="container">
+        <div class="well  bg-dark text-center text-white"><h1>Current Situation of Sri Lankan Hospitals </h1></div>
+       <!-- <div *ngFor="let info of xx">
+            {{info.cumulative_local}} {{info.hospital.name}}{{info.hospital.name_si}}<br>
+         </div> -->
+        <div class="row"  >
+           
+			    <div class="col-lg-4 col-xs-12 text-center" *ngFor="let info of xx index as i">
+					<div class="box">
+                        <i class="fa fa-behance fa-3x" aria-hidden="true"></i>
+						<div class="box-title">
+							<h2>{{info.hospital.name_si}}</h2>
+						</div>
+						<div class="box-text">
+							<span><h5>{{info.hospital.name}}</h5></span>
+						</div>
+						<div class="box-btn">
+						    <a href="#">Updated date time : {{info.created_at}}</a>
+                        </div>
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                              <div class="panel-heading">
+                                <h5 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                  Click View Details</a>
+                                </h5>
+                              </div>
+                              <div id="collapse1" class="panel-collapse collapse in">
+                                <div class="panel-body"><ul class="list-group">
+                                    <li class="list-group-item bg-warning">
+                                    <h5>Treatment Total : {{info.treatment_total}} <br></h5>
+                                    <h5>Cumulative Total : {{info.cumulative_total}}</h5>
+                                    </li>
+                                    <!--passing data from Parent to child   this.xx.cumulative_local,this.xx.cumulative_foreign-->
+                                    <li class="list-group-item">
+                                      <app-pie-chart-component3 [childMessage_CL]="info.cumulative_local" [childMessage_CF]="info.cumulative_foreign"></app-pie-chart-component3>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <app-pie-chart-component4 [childMessage_TL]="info.treatment_local" [childMessage_TF]="info.treatment_foreign"></app-pie-chart-component4>
+                                    </li>
+                                  </ul></div>
+                              </div>
+                            </div>
+                            
+                          </div>
+					 </div>
+				</div>	 
+						
+    </div>
+
+    <!--Line chart-->
+    <div class="row">
+        <div class="col-lg-12 col-xs-12 text-center ">
+            <div >
+                <div class=" box bg-light" ><app-bar-chart1></app-bar-chart1></div> 
+             </div>
+        </div>
+        
+    </div>	
 </div>
