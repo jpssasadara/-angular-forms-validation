@@ -42,11 +42,12 @@ export class LineChart1Component implements OnInit {
       ,63159
       ,58411
       ,57610
-      ,72736], label: 'Global ' }
+      ,72736,72839,
+      75853], label: 'Global ' }
    
   ];
   public lineChartLabels: Label[] = ['11-Mar','12-Mar' , '13-Mar', '14-Mar', '15-Mar', '16-Mar', '17-Mar','18-Mar','19-Mar','20-Mar',
-  '21-Mar','22-Mar','23-Mar','24-Mar','25-Mar','26-Mar','27-Mar','28-Mar','29-Mar','30-Mar','31-Mar','Apr-1','Apr-2'];
+  '21-Mar','22-Mar','23-Mar','24-Mar','25-Mar','26-Mar','27-Mar','28-Mar','29-Mar','30-Mar','31-Mar','Apr-1','Apr-2','Apr-3','Apr-4'];
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
     responsive: true,
     scales: {

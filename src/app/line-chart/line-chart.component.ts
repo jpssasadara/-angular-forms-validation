@@ -24,12 +24,12 @@ export class LineChartComponent implements OnInit {
       ,2
       ,5
       ,21
-      ,5], label: 'Sri Lanka' },
+      ,5,3,8], label: 'Sri Lanka' },
     
    
   ];
   public lineChartLabels: Label[] = ['11-Mar','12-Mar' , '13-Mar', '14-Mar', '15-Mar', '16-Mar', '17-Mar','18-Mar','19-Mar','20-Mar',
-  '21-Mar','22-Mar','23-Mar','24-Mar','25-Mar','26-Mar','27-Mar','28-Mar','29-Mar','30-Mar','31-Mar','Apr-1','Apr-2'];
+  '21-Mar','22-Mar','23-Mar','24-Mar','25-Mar','26-Mar','27-Mar','28-Mar','29-Mar','30-Mar','31-Mar','Apr-1','Apr-2','Apr-3','Apr-4'];
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
     responsive: true,
     scales: {
