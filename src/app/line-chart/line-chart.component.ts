@@ -24,7 +24,7 @@ export class LineChartComponent implements OnInit {
       ,2
       ,5
       ,21
-      ,5,3,8], label: 'Sri Lanka' },
+      ,5,8,3], label: 'Sri Lanka' },
     
    
   ];
