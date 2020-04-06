@@ -1,11 +1,59 @@
-<div class="container">
+<div class="social-box">
+    <div class="container">
+        <div class="well  bg-dark text-center text-white"><h2>AI Prediction of Total Covid 19 Patients</h2></div>
+     	<div class="row">
+             
+            <div class="col-lg-3 col-xs-12 text-center ">
+                
+            </div>	
+			    <div class="col-lg-7 col-xs-12 text-center bg-white">
+					<div class="box ">
+                        <i class="fa fa-behance fa-3x" aria-hidden="true"></i>
+						<div class="box-title ">
+							<div class="card-body">
+                                <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input type="date" class="form-control" formControlName="name">
+                                        <span class="text-danger"
+                                            *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required">
+                                            Date is required
+                                        </span>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success">Predict</button>
+                                    </div>
+                                </form>
+                            </div>
+						</div>
+						<div class="box-text ">
+							<span><h5>New Local Cases</h5></span>
+						</div>
+						<div class="box-btn">
+						    <a href="#">Updated date time : XXXXX</a>
+						</div>
+					 </div>
+                </div>	 
+                
+                
+				
+    </div>
+</div>
+<br><br>
+
+
+
+
+
+<!--<div class="container">
     <div class="well"></div>
     <div class="well"></div>
     <div class="well"></div>
     <div class="well"></div>
     <div class="well"></div>
     <div class="well text-center"><h1>.......Sorry!! Still Developing........ </h1></div>
-    <!--<div class="row">
+    <div class="row">
         <div class="col-md-8 mx-auto">
             <div class="card">
                 <div class="card-header">
@@ -77,5 +125,5 @@
                 </div>
             </div>
         </div>
-    </div>  -->
-</div>
+    </div>  
+</div>-->
