@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "~8.2.3",
     "@angular/router": "~8.2.3",
     "bootstrap": "^4.4.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "chart.js": "^2.8.0",
     "chartjs-adapter-luxon": "^0.1.1",
     "chartjs-plugin-annotation": "^0.5.7",
